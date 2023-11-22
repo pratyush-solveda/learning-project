@@ -2,5 +2,45 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="copyright" template="Solveda_Theme::html/footer.phtml" />
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceContainer name="footer">
+            <container name="footer.category.container" as="footerCategoryContainer" label="Category Container" htmlTag="div" htmlClass="footer-category-container" />
+            <container name="our.info.container" label="Information" htmlTag="div" htmlClass="about-faqs-container" after="footer.category.container" />
+            <container name="contact-newsletter.container" label="Contact Info" htmlTag="div" htmlClass="contact-newsletter-container" after="about-faqs.container" />
+        </referenceContainer>
+
+        <!-- Category container -->
+        <referenceContainer name="footer.category.container">
+            <block class="Solveda\Theme\Block\CategoryFooter" name="custom.footer.category" template="Solveda_Theme::category/footercategory.phtml" />
+        </referenceContainer>
+        
+        <!-- information container -->
+        <referenceContainer name="our.info.container">
+        <block class="Magento\Framework\View\Element\Html\Link" name="about_us" before="-">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">About Us</argument>
+                        <argument name="path" xsi:type="string" translate="true">about-us</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="customer_service">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Customer Service</argument>
+                        <argument name="path" xsi:type="string">customer-service</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="faqs" after="about_us">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">FAQs</argument>
+                        <argument name="path" xsi:type="string" translate="true">faqs</argument>
+                    </arguments>
+                </block>
+        </referenceContainer>
+
+        <!-- Contact info container  -->
+        <referenceContainer name="contact-newsletter.container">
+            <block class="Magento\Framework\View\Element\Template" name="contact_info" template="Solveda_Theme::contact-info.phtml" />
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="contact-newsletter.container" />
     </body>
 </page>

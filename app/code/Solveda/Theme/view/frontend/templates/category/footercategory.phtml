@@ -1,0 +1,6 @@
+<?php
+$categories = $block->getCategoryCollection();
+foreach ($categories as $category) {
+    echo '<a href="' . $category->getUrl() . '">' . $category->getName() . '</a><br>';
+}
+?>
