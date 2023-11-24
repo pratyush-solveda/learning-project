@@ -4,9 +4,21 @@
         <referenceBlock name="copyright" template="Solveda_Theme::html/footer.phtml" />
         <referenceBlock name="footer_links" remove="true" />
         <referenceContainer name="footer">
+        <container name="footer.upper.container" label="Upper Footer" htmlTag="div" htmlClass="footer-upper-container" >
             <container name="footer.category.container" as="footerCategoryContainer" label="Category Container" htmlTag="div" htmlClass="footer-category-container" />
-            <container name="our.info.container" label="Information" htmlTag="div" htmlClass="about-faqs-container" after="footer.category.container" />
-            <container name="contact-newsletter.container" label="Contact Info" htmlTag="div" htmlClass="contact-newsletter-container" after="about-faqs.container" />
+            <container name="gift.cards.container" label="Gift Cards" htmlTag="div" htmlClass="gift-card-container" after="footer.category.container" />
+            <container name="our.info.container" label="Information" htmlTag="div" htmlClass="about-faqs-container" after="gift.cards.container" />
+            <container name="contact-newsletter.container" label="Contact Info" htmlTag="div" htmlClass="contact-newsletter-container" after="our.info.container" />
+        </container>
+
+        <container name="footer.middle.container" label="Middle Footer" htmlTag="div" htmlClass="footer-middle-container" >
+            <container name="footer.payment.container" label="Payement Container" htmlTag="div" htmlClass="footer-payment-container" />
+            <container name="social.media.container" label="Social Media" htmlTag="div" htmlClass="social-media-container" after="footer.payment.container" />
+        </container>
+
+        <container name="footer.bottom.container" label="Bottom Footer" htmlTag="div" htmlClass="footer-bottom-container" >
+            <container name="footer.details.container" as="footerdetailsContainer" label="Details Container" htmlTag="div" htmlClass="footer-details-container" />
+        </container>
         </referenceContainer>
 
         <!-- Category container -->
@@ -14,26 +26,14 @@
             <block class="Solveda\Theme\Block\CategoryFooter" name="custom.footer.category" template="Solveda_Theme::category/footercategory.phtml" />
         </referenceContainer>
         
+        <!-- Gift Cards container  -->
+        <referenceContainer name="gift.cards.container">
+            <block class="Magento\Framework\View\Element\Html\Link" name="gift_cards" template="Solveda_Theme::giftcards.phtml" />
+        </referenceContainer>
+
         <!-- information container -->
         <referenceContainer name="our.info.container">
-        <block class="Magento\Framework\View\Element\Html\Link" name="about_us" before="-">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">About Us</argument>
-                        <argument name="path" xsi:type="string" translate="true">about-us</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Framework\View\Element\Html\Link" name="customer_service">
-                    <arguments>
-                        <argument name="label" xsi:type="string">Customer Service</argument>
-                        <argument name="path" xsi:type="string">customer-service</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Framework\View\Element\Html\Link" name="faqs" after="about_us">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">FAQs</argument>
-                        <argument name="path" xsi:type="string" translate="true">faqs</argument>
-                    </arguments>
-                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="information.content" template="Solveda_Theme::info.phtml" />
         </referenceContainer>
 
         <!-- Contact info container  -->
@@ -41,6 +41,10 @@
             <block class="Magento\Framework\View\Element\Template" name="contact_info" template="Solveda_Theme::contact-info.phtml" />
         </referenceContainer>
 
-        <move element="form.subscribe" destination="contact-newsletter.container" />
+        <!-- summmary details container -->
+        <referenceContainer name="footer.details.container">
+            <block class="Magento\Framework\View\Element\Template" name="summarydetails_info" template="Solveda_Theme::summary-info.phtml" />
+        </referenceContainer>
+        <referenceBlock name="form.subscribe" remove="true" />
     </body>
 </page>
