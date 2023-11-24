@@ -4,19 +4,19 @@
         <referenceBlock name="copyright" template="Solveda_Theme::html/footer.phtml" />
         <referenceBlock name="footer_links" remove="true" />
         <referenceContainer name="footer">
-        <container name="footer.upper.container" label="Upper Footer" htmlTag="div" htmlClass="footer-upper-container" />
+        <container name="footer.upper.container" label="Upper Footer" htmlTag="div" htmlClass="footer-upper-container" >
             <container name="footer.category.container" as="footerCategoryContainer" label="Category Container" htmlTag="div" htmlClass="footer-category-container" />
             <container name="gift.cards.container" label="Gift Cards" htmlTag="div" htmlClass="gift-card-container" after="footer.category.container" />
             <container name="our.info.container" label="Information" htmlTag="div" htmlClass="about-faqs-container" after="gift.cards.container" />
             <container name="contact-newsletter.container" label="Contact Info" htmlTag="div" htmlClass="contact-newsletter-container" after="our.info.container" />
         </container>
 
-        <container name="footer.middle.container" label="Middle Footer" htmlTag="div" htmlClass="footer-middle-container" />
+        <container name="footer.middle.container" label="Middle Footer" htmlTag="div" htmlClass="footer-middle-container" >
             <container name="footer.payment.container" label="Payement Container" htmlTag="div" htmlClass="footer-payment-container" />
             <container name="social.media.container" label="Social Media" htmlTag="div" htmlClass="social-media-container" after="footer.payment.container" />
         </container>
 
-        <container name="footer.bottom.container" label="Bottom Footer" htmlTag="div" htmlClass="footer-bottom-container" />
+        <container name="footer.bottom.container" label="Bottom Footer" htmlTag="div" htmlClass="footer-bottom-container" >
             <container name="footer.details.container" as="footerdetailsContainer" label="Details Container" htmlTag="div" htmlClass="footer-details-container" />
         </container>
         </referenceContainer>
