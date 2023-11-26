@@ -2,7 +2,16 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <body>
     <referenceContainer name="content">
-        
+        <container name="main.upper.container" label="Main Upper" htmlTag="div" htmlClass="main-upper-container" />
+        <container name="main.lower.container" label="Main Bottom" htmlTag="div" htmlClass="main-bottom-container" />
+    </referenceContainer>
+
+    <referenceContainer name="main.upper.container">
+            <block class="Magento\Framework\View\Element\Template" name="custom.main.upper.content" template="Solveda_Cms::upper-content.phtml" />  
+    </referenceContainer>
+
+    <referenceContainer name="main.lower.container">
+            <block class="Magento\Framework\View\Element\Template" name="custom.main.lower" template="Solveda_Cms::lower-content.phtml" />  
     </referenceContainer>
 </body>
 </page>
