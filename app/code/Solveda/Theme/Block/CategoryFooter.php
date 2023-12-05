@@ -22,6 +22,7 @@ class CategoryFooter extends Template
     {
         $collection = $this->categoryCollectionFactory->create();
         $collection->addAttributeToSelect('*');
+        $collection->addAttributeToFilter('level', 2);
         return $collection;
     }
 }
