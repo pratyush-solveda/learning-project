@@ -13,5 +13,7 @@
     <referenceContainer name="main.lower.container">
             <block class="Magento\Framework\View\Element\Template" name="custom.main.lower" template="Solveda_Cms::lower-content.phtml" />  
     </referenceContainer>
+
+    <referenceBlock name="catalog.topnav" remove="true" />
 </body>
 </page>

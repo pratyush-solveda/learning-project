@@ -1,6 +1,23 @@
+<?php
+$helper = $this->helper(Solveda\Cms\Helper\Data::class);
+$categoryCollection = $helper->getCategoryCollection();
+?>
 <div class="main-upper-content">
     <div class="left-content" style="width:20%; float:left;">
-        <div class="category-slider"></div>
+        <div class="category-slider">
+        <ul class="category-list">
+            <?php foreach ($categoryCollection as $category) : ?>
+                <li>
+                    <?php
+                    $categoryName = $category->getName();
+                    $categoryImageUrl = $category->getImageUrl();
+                    ?>
+                    <?php echo $categoryName; ?>
+                    <img src="<?php echo $categoryImageUrl; ?>" alt="<?php echo $categoryName; ?>" />
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        </div>
     </div>
 
     <div class="right-content" style="width:80%; float:right;">
