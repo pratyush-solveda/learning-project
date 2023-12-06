@@ -47,5 +47,10 @@
         </referenceContainer>
         <referenceBlock name="form.subscribe" remove="true" />
         <referenceContainer name="header.panel.wrapper" remove="true" />
+
+        <!-- top header customization -->
+        <referenceContainer name="header-wrapper">
+            <block class="Solveda\Theme\Block\CustomerAccount" name="myaccount-login" template="Solveda_Theme::account/customer.phtml" before="minicart"/>
+        </referenceContainer>
     </body>
 </page>
