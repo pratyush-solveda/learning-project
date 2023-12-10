@@ -7,11 +7,11 @@
     </referenceContainer>
 
     <referenceContainer name="main.upper.container">
-            <block class="Magento\Framework\View\Element\Template" name="custom.main.upper.content" template="Solveda_Cms::upper-content.phtml" />  
+            <block class="Solveda\Cms\Block\HomePage" name="custom.main.upper.content" template="Solveda_Cms::upper-content.phtml" />  
     </referenceContainer>
 
     <referenceContainer name="main.lower.container">
-            <block class="Magento\Framework\View\Element\Template" name="custom.main.lower" template="Solveda_Cms::lower-content.phtml" />  
+            <block class="Solveda\Cms\Block\HomePage" name="custom.main.lower" template="Solveda_Cms::lower-content.phtml" />  
     </referenceContainer>
 </body>
 </page>

@@ -1,20 +1,37 @@
+<?php
+$helper = $this->helper(Solveda\Cms\Helper\Data::class);
+$categoryCollection = $helper->getCategoryCollection();
+?>
 <div class="main-upper-content">
     <div class="left-content" style="width:20%; float:left;">
-        <div class="category-slider"></div>
+        <div class="category-slider">
+        <ul class="category-list">
+            <?php foreach ($categoryCollection as $category) : ?>
+                <li>
+                    <?php
+                    $categoryName = $category->getName();
+                    $categoryImageUrl = $category->getImageUrl();
+                    ?>
+                    <?php echo $categoryName; ?>
+                    <img src="<?php echo $categoryImageUrl; ?>" alt="<?php echo $categoryName; ?>" />
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        </div>
     </div>
 
     <div class="right-content" style="width:80%; float:right;">
         <div class="left-banner">
             <div class="website-banner" style="width:50%; float:left;">
-            <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/banners/blackFriday_websiteBanner.webp') ?>" alt="Website Banner">
+            <img src="<?= $block->getUpperImage(); ?>" alt="Website Banner">
             </div>
         </div>
         <div class="right-banners" style="width:50%; float:left;">
             <div class="upper-banner">
-            <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/banners/FNM_1.webp') ?>" alt="Right 1st Banner">
+            <img src="<?= /* @noEscape */ $block->getRightImage1(); ?>" alt="Right 1st Banner">
             </div>
             <div class="lower-banner">
-            <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/banners/FNV_1.webp') ?>" alt="Right 1st Banner">
+            <img src="<?= /* @noEscape */ $block->getRightImage2(); ?>" alt="Right 1st Banner">
             </div>
         </div>
     </div>
