@@ -38,7 +38,7 @@
 
         <!-- Contact info container  -->
         <referenceContainer name="contact-newsletter.container">
-            <block class="Magento\Framework\View\Element\Template" name="contact_info" template="Solveda_Theme::contact-info.phtml" />
+            <block class="Solveda\Theme\Block\ContactInfo" name="contact_info" template="Solveda_Theme::contact-info.phtml" />
         </referenceContainer>
 
         <!-- summmary details container -->

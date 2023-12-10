@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="custom" translate="label" sortOrder="100">
+            <label>Solveda</label>
+        </tab>
+        <section id="solveda_custom" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Solveda Configuration</label>
+            <tab>custom</tab>
+            <resource>Solveda_Theme::config_solveda</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="selected_categories" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Categories</label>
+                    <source_model>Solveda\Theme\Model\Category</source_model>
+                </field>
+                <field id="email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Address</label>
+                    <comment>Enter your email address</comment>
+                </field>
+                <field id="address" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store Address</label>
+                    <comment>Enter your store address</comment>
+                </field>
+                <field id="phoneno" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Phone Number</label>
+                    <comment>Enter your phone number</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
