@@ -1,0 +1,93 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="custom" translate="label" sortOrder="100">
+            <label>Solveda</label>
+        </tab>
+        <section id="solveda_custom" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Solveda Configuration</label>
+            <tab>custom</tab>
+            <resource>Solveda_Theme::config_solveda</resource>
+            <group id="homepgimg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>HomePage Image Configuration</label>
+                <field id="upperimage" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upper Banner</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="rtimgu" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Right Column 1st Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="rtimgl" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Right Column 2nd Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="lowerimage" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monthly Banner</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+            </group>
+            <group id="spencerscommunity" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Spencers Community Image Configuration</label>
+                <field id="firstimg" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="secondimg" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="thirdimg" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="fourthimg" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fourth Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+            </group>
+            <group id="spencerslowerpost" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Spencers Lower Post Configuration</label>
+                <field id="firstpost" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="secondpost" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="thirdpost" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+                <field id="fourthpost" translate="label comment" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fourth Image</label>
+                    <backend_model>Solveda\Theme\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media">homepgimg_folder</base_url>
+                    <upload_dir config="system">homepgimg_folder</upload_dir>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

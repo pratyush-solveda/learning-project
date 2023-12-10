@@ -48,4 +48,18 @@
         <referenceBlock name="form.subscribe" remove="true" />
         <referenceContainer name="header.panel.wrapper" remove="true" />
     </body>
+
+
+    <!-- Header Customization -->
+    <referenceBlock name="catalog.topnav" remove="true" />
+
+    <referenceContainer name="header.container">
+        <container name="left.header" label="headerleft" htmlTag="div" htmlClass="left-col" />
+        <container name="center.header" label="headercenter" htmlTag="div" htmlClass="center-col" after="left.header" />
+        <container name="right.header" label="headerright" htmlTag="div" htmlClass="right-col" after="center.header" />
+    </referenceContainer>
+
+    <move element="logo" destination="left.header"/>
+    <move element="top.search" destination="center.header"/>
+    <move element="minicart" destination="right.header"/>
 </page>

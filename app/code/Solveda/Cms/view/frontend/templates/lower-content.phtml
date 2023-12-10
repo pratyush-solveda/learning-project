@@ -1,12 +1,12 @@
 <?php
 /**
-* @var \Magento\Framework\View\Element\Template $block
+* @var \Solveda\Cms\Block\HomePage $block
 */
 ?>
 
 <div class="lower-main-content">
     <div class="monthly-banner">
-    <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/banners/monthlyWebBanner.webp') ?>" alt="monthly-banner">
+    <img src="<?= /* @noEscape */ $block->getLowerImage(); ?>" alt="monthly-banner">
     </div>
 
     <br><br>
@@ -18,16 +18,16 @@
         <div class="community-container">
             <div class="row">
                 <div style="width:23%; float:left; margin:1%;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/spencer-community/bestSeller.jpg') ?>" width="295px" height="185px" style="width:100%" alt="Best Deals"></a>
+                <img src="<?= /* @noEscape */ $block->getCommunityFirst(); ?>" width="295px" height="185px" style="width:100%" alt="Best Deals"></a>
                 </div>
                 <div style="width:23%; float:left; margin:1%;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/spencer-community/coupon.jpg') ?>" width="295px" height="185px" style="width:100%" alt="Coupon"></a>
+                <img src="<?= /* @noEscape */ $block->getCommunitySecond(); ?>" width="295px" height="185px" style="width:100%" alt="Coupon"></a>
                 </div>
                 <div style="width:23%; float:left; margin:1%;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/spencer-community/brands.jpg') ?>" width="295px" height="185px" style="width:100%" alt="Top Brands"></a>
+                <img src="<?= /* @noEscape */ $block->getCommunityThird(); ?>" width="295px" height="185px" style="width:100%" alt="Top Brands"></a>
                 </div>
                 <div style="width:23%; float:left; margin:1%;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/spencer-community/deal.jpg') ?>" width="295px" height="185px" style="width:100%" alt="Deal"></a>
+                <img src="<?= /* @noEscape */ $block->getCommunityFourth(); ?>" width="295px" height="185px" style="width:100%" alt="Deal"></a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <span>Personal Care</span><br>
                 </div>
                 <div style="width:60%; float:left;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/main-bottom-images/block1_a.jpg') ?>" class="img-responsive" style="width:100%" alt="Personal Care">
+                <img src="<?= /* @noEscape */ $block->getFirstPost(); ?>" class="img-responsive" style="width:100%" alt="Personal Care">
                 </div>
             </div>
             <div style="width:23%; float:left; margin:1%">
@@ -52,7 +52,7 @@
                 <span>Home & Kitchen</span><br>
                 </div>
                 <div style="width:60%; float:left;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/main-bottom-images/homeKitchen_a.jpg') ?>" class="img-responsive" style="width:100%" alt="Home & Kitchen">
+                <img src="<?= /* @noEscape */ $block->getSecondPost(); ?>" class="img-responsive" style="width:100%" alt="Home & Kitchen">
                 </div>
             </div>
             <div style="width:23%; float:left; margin:1%">
@@ -60,7 +60,7 @@
                 <span>Electronics & Electrical</span><br>
                 </div>
                 <div style="width:60%; float:left;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/main-bottom-images/ene_b.jpg') ?>" class="img-responsive" style="width:100%" alt="Electroics">
+                <img src="<?= /* @noEscape */ $block->getThirdPost(); ?>" class="img-responsive" style="width:100%" alt="Electroics">
                 </div>
             </div>
             <div style="width:23%; float:left; margin:1%">
@@ -68,7 +68,7 @@
                 <span>Download App</span><br>
                 </div>
                 <div style="width:30%; float:left;">
-                <img src="<?= /* @noEscape */ $block->getViewFileUrl('Solveda_Cms::images/main-bottom-images/app.jpg') ?>" class="img-responsive" style="width:90%" alt="App">
+                <img src="<?= /* @noEscape */ $block->getFourthPost(); ?>" class="img-responsive" style="width:90%" alt="App">
                 </div>
             </div>
         </div>
