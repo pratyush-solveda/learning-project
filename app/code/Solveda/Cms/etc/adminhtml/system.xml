@@ -88,6 +88,13 @@
                     <upload_dir config="system">homepgimg_folder</upload_dir>
                 </field>
             </group>
+            <group id="sidebarcategories" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Select Sidebar Categories</label>
+                <field id="select_categories" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Categories</label>
+                    <source_model>Solveda\Theme\Model\Category</source_model>
+                </field>   
+            </group>
         </section>
     </system>
 </config>

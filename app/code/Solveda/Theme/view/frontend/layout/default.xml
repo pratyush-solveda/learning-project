@@ -59,6 +59,10 @@
         <container name="right.header" label="headerright" htmlTag="div" htmlClass="right-col" after="center.header" />
     </referenceContainer>
 
+    <referenceContainer name="right.header">
+            <block class="Solveda\Theme\Block\CustomerAccount" name="myaccount-login" template="Solveda_Theme::account/customer.phtml" before="minicart"/>
+    </referenceContainer>
+
     <move element="logo" destination="left.header"/>
     <move element="top.search" destination="center.header"/>
     <move element="minicart" destination="right.header"/>
