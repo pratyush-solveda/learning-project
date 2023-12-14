@@ -1,0 +1,54 @@
+<div class="top-navbar col-sm-12 no-padding">
+<div class="row" style="width: 100%; float:left;">
+    <div class="left-nav" style="width:33%; float:left;">
+        <h4>Categories</h4>
+    </div>
+    <div class="center-nav" style="width:34%; float:left;">
+    <div style="width: 100%; float:left;">
+        <div style="width:50%;"><a href="#">Offers</a></div>
+        <div style="width:50%;"><a href="#">Shopping List</a></div>
+    </div>
+    </div>
+    <div class="right-nav" style="width:33%; float:right;">
+        <div class="delivery-store">Serving Store : <span id="selected-pincode"></span></div>
+            <div id="delivery-pincode-modal" style="display: none;">
+                <label for="pincode">Where do you want us to deliver?</label>
+                <input type="text" id="pincode" name="pincode" />
+                <button id="check-pincode">Select Delivery Store</button>
+                <div>or</div>
+                <div class="log-sign">
+                <a href="<?= $this->getUrl('customer/account/login'); ?>">Login</a> to select from your saved addresses or <a href="<?=$this->getUrl('customer/account/create');?>">Signup</a> as a new customer
+                </div>
+            </div>
+        <div class="store-location">Store Locator</div>
+    </div>
+</div>
+</div>
+
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            buttons: [{
+                text: $.mage.__('Close'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        $('.delivery-store').on('click', function () {
+            var popup = modal(options, $('#delivery-pincode-modal'));
+            $('#delivery-pincode-modal').modal('openModal');
+        });
+
+        $('#check-pincode').on('click', function () {
+            var enteredPincode = $('#pincode').val();
+            $('#selected-pincode').text(enteredPincode);
+            $('#delivery-pincode-modal').modal('closeModal');
+        });
+    });
+</script>
