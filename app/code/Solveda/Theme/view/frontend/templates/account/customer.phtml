@@ -2,9 +2,24 @@
     Login
 </button>
 
-<!-- <div class="login-register-dropdown hidden">
-  <ul>
-    <li><a href="<?php echo $block->getLoginUrl() ?>">Login</a></li>
-    <li><a href="<?php echo $block->getRegisterUrl() ?>">Register</a></li>
-  </ul>
-</div> -->
+<div id="myacc" style="display: none; position: absolute; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #ccc; z-index: 1000;">
+    <h2>My Account</h2>
+    <p>Not logged in or registered yet?
+Join over 2,000 customers @Spencer's</p>
+<h3>Makes fine living affordable</h3><br><br>
+<p>Flexible Payment Terms</p><br>
+<p>Delivery Tracking Guarenteed</p>
+<div><a href="<?php echo $block->getLoginUrl() ?>">Login</a></div>
+<div><a href="<?php echo $block->getRegisterUrl() ?>">Register</a></div>
+</div>
+
+
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        $(document).ready(function() {
+            $('.login-register-btn').click(function() {
+                $('#myacc').toggle();
+            });
+        });
+    });
+</script>

@@ -61,6 +61,8 @@
 
     <referenceContainer name="right.header">
             <block class="Solveda\Theme\Block\CustomerAccount" name="myaccount-login" template="Solveda_Theme::account/customer.phtml" before="minicart"/>
+            <block class="Magento\Framework\View\Element\Template" name="track-order" template="Solveda_Theme::topmenu/track.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="offer-shopping" template="Solveda_Theme::topmenu/offerlist.phtml"/>
     </referenceContainer>
 
     <move element="logo" destination="left.header"/>

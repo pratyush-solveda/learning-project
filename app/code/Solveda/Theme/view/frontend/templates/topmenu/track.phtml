@@ -1,0 +1,20 @@
+<button type="button" class="track-order">
+    Track
+</button>
+
+<div id="track" style="display: none; position: absolute; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #ccc; z-index: 1000;">
+    <h2>Tracking Order</h2>
+<div><a href="<?php echo $block->getLoginUrl() ?>">Login</a></div>
+<div><a href="<?php echo $block->getRegisterUrl() ?>">Register</a></div>
+</div>
+
+
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        $(document).ready(function() {
+            $('.track-order').click(function() {
+                $('#track').toggle();
+            });
+        });
+    });
+</script>
