@@ -7,9 +7,9 @@ if($block->getCategories()){
     <div class="left-content" style="width:20%; float:left;">
         <div class="category-list">
             <?php foreach ($categoryCollection as $category): ?>
-            <div>
+            <div class = "category-tree" data-category-id="<?= $category->getId() ?>">
             <img src="<?= $block->getCategoryImage($category); ?>" alt="cat-image">
-            <a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+            <div><?php echo $category->getName(); ?></div>
             </div>
             <?php endforeach; ?>
         </div>
@@ -32,3 +32,63 @@ if($block->getCategories()){
         </div>
     </div>
 </div>
+
+<script>
+    require(['jquery'], function($) {
+    $(document).ready(function () {
+
+        $('.category-list').on('click', '.category-tree', function () {
+        var categoryId = $(this).data('category-id');
+        
+            $.ajax({
+                url: '/home/index/loadsubcategories',
+                type: 'POST',
+                dataType: 'json',
+                data: {category_id: categoryId},
+                success: function (response) {
+                if (response.success) {
+                    var childCategories = response.categories;
+                    console.log(childCategories);
+                    
+                    if (childCategories.length > 0) {
+                        displayPopover(childCategories);
+                    } else {
+                        window.location.href = '/catalog/category/view/id/' + categoryId;
+                    }
+                } else {
+                    console.error('Error: ' + response.error);
+                }
+            },
+            error: function () {
+                console.error('AJAX request failed');
+            }
+        });
+    });
+
+    function displayPopover(childCategories) {
+        $(this).popover({
+            content: generatePopoverContent(childCategories),
+            placement: 'right',
+            trigger: 'manual',
+        }).popover('show');
+    }
+
+    function generatePopoverContent(childCategories) {
+        var content = '<div class="popover-categories">';
+        childCategories.forEach(function (category) {
+            content += '<div class="child-category" data-category-id="' + category.id + '">' + category.name + '</div>';
+        });
+        content += '</div>';
+        return content;
+    }
+
+    $('body').on('click', '.popover-categories .child-category', function () {
+        var childCategoryId = $(this).data('category-id');
+        
+        window.location.href = '/catalog/category/view/id/' + childCategoryId;
+    });
+
+            
+    });
+});
+</script>
