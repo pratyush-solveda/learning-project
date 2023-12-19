@@ -62,7 +62,7 @@
     <referenceContainer name="right.header">
             <block class="Solveda\Theme\Block\CustomerAccount" name="myaccount-login" template="Solveda_Theme::account/customer.phtml" before="minicart"/>
             <block class="Magento\Framework\View\Element\Template" name="track-order" template="Solveda_Theme::topmenu/track.phtml"/>
-            <block class="Magento\Framework\View\Element\Template" name="offer-shopping" template="Solveda_Theme::topmenu/offerlist.phtml"/>
+            <block class="Solveda\Theme\Block\HeaderData" name="offer-shopping" template="Solveda_Theme::topmenu/offerlist.phtml"/>
     </referenceContainer>
 
     <move element="logo" destination="left.header"/>
@@ -70,6 +70,6 @@
     <move element="minicart" destination="right.header"/>
     
     <referenceContainer name="page.top">
-        <block class="Magento\Framework\View\Element\Template" name="nav-top" template="Solveda_Theme::nav/topnav.phtml"/>
+        <block class="Solveda\Theme\Block\HeaderData" name="nav-top" template="Solveda_Theme::nav/topnav.phtml"/>
     </referenceContainer>
 </page>

@@ -1,3 +1,7 @@
+<?php
+
+$offercategoryid = $block->getOfferProductId();
+?>
 <div class="top-navbar col-sm-12 no-padding">
 <div class="row" style="width: 100%; float:left;">
     <div class="left-nav" style="width:33%; float:left;">
@@ -5,7 +9,7 @@
     </div>
     <div class="center-nav" style="width:34%; float:left;">
     <div style="width: 100%; float:left; display: inline-flex;">
-        <div style="width:50%;"><a href="#">Offers</a></div>
+        <div style="width:50%;"><a href="<?= $this->getUrl('catalog/category/view/id/'.$offercategoryid); ?>">Offers</a></div>
         <div style="width:50%;"><a href="#">Shopping List</a></div>
     </div>
     </div>

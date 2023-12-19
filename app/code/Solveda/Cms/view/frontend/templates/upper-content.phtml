@@ -33,6 +33,10 @@ if($block->getCategories()){
     </div>
 </div>
 
+<div id="childCategoriesContainer" class="child-categories-container" style="display:none">
+    
+</div>
+
 <script>
     require(['jquery'], function($) {
     $(document).ready(function () {
@@ -51,7 +55,7 @@ if($block->getCategories()){
                     console.log(childCategories);
                     
                     if (childCategories.length > 0) {
-                        displayPopover(childCategories);
+                        displayChildCategories(childCategories);
                     } else {
                         window.location.href = '/catalog/category/view/id/' + categoryId;
                     }
@@ -65,28 +69,24 @@ if($block->getCategories()){
         });
     });
 
-    function displayPopover(childCategories) {
-        $(this).popover({
-            content: generatePopoverContent(childCategories),
-            placement: 'right',
-            trigger: 'manual',
-        }).popover('show');
-    }
+    function displayChildCategories(childCategories) {
+        var container = $('#childCategoriesContainer');
+        container.empty();
 
-    function generatePopoverContent(childCategories) {
-        var content = '<div class="popover-categories">';
+        var content = '<div class="child-categories">';
         childCategories.forEach(function (category) {
-            content += '<div class="child-category" data-category-id="' + category.id + '">' + category.name + '</div>';
+            content += '<div data-category-id="' + category.id + '">' + category.name + '</div>';
         });
         content += '</div>';
-        return content;
-    }
 
-    $('body').on('click', '.popover-categories .child-category', function () {
-        var childCategoryId = $(this).data('category-id');
-        
-        window.location.href = '/catalog/category/view/id/' + childCategoryId;
-    });
+        container.append(content).toggle();
+
+        container.on('click', '.child-categories div', function () {
+            var childCategoryId = $(this).data('category-id');
+            // Navigate to the child category page
+            window.location.href = '/catalog/category/view/id/' + childCategoryId;
+        });
+    }
 
             
     });
