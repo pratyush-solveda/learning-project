@@ -28,6 +28,13 @@
                     <comment>Enter your phone number</comment>
                 </field>
             </group>
+            <group id="offer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Offer Product</label>
+                <field id="selected_offer_categories" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Offer Category</label>
+                    <source_model>Solveda\Theme\Model\Category</source_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>
