@@ -32,8 +32,8 @@ class HeaderData extends Template
         $newUrlKey = 'offer';
         if($categoryId){
             $category = $this->categoryFactory->create()->load($categoryId);
-            $category->setUrlKey($newUrlKey);
-            $category->save();
+            // $category->setUrlKey($newUrlKey);
+            // $category->save();
 
             return $category->getUrl();
         }
