@@ -1,6 +1,6 @@
 <?php
 
-$offercategoryid = $block->getOfferProductId();
+$offercategoryurl = $block->getCategoryUrl();
 ?>
 <button type="button" class="offer-list">
     Offer
@@ -9,7 +9,7 @@ $offercategoryid = $block->getOfferProductId();
 <div id="offerlist" style="display: none; position: absolute; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border: 1px solid #ccc; z-index: 1000;">
     <h2>More</h2>
 <div><a href="#">Shopping List</a></div>
-<div><a href="<?= $this->getUrl('catalog/category/view/id/'.$offercategoryid); ?>">Offer</a></div>
+<div><a href="<?= $offercategoryurl; ?>">Offer</a></div>
 </div>
 
 

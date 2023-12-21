@@ -7,7 +7,7 @@ if($block->getCategories()){
     <div class="left-content" style="width:20%; float:left;">
         <div class="category-list">
             <?php foreach ($categoryCollection as $category): ?>
-            <div class = "category-tree" data-category-id="<?= $category->getId() ?>">
+            <div class = "category-tree" data-category-url="<?= $category->getUrl(); ?>" data-category-id="<?= $category->getId() ?>">
             <img src="<?= $block->getCategoryImage($category); ?>" alt="cat-image">
             <div><?php echo $category->getName(); ?></div>
             </div>
@@ -40,9 +40,12 @@ if($block->getCategories()){
 <script>
     require(['jquery'], function($) {
     $(document).ready(function () {
+        var container = $('#childCategoriesContainer');
 
         $('.category-list').on('click', '.category-tree', function () {
+            container.hide();
         var categoryId = $(this).data('category-id');
+        var categoryurl = $(this).data('category-url');
         
             $.ajax({
                 url: '/home/index/loadsubcategories',
@@ -57,7 +60,8 @@ if($block->getCategories()){
                     if (childCategories.length > 0) {
                         displayChildCategories(childCategories);
                     } else {
-                        window.location.href = '/catalog/category/view/id/' + categoryId;
+                        window.location.href = categoryurl;
+                        container.hide();
                     }
                 } else {
                     console.error('Error: ' + response.error);
@@ -70,21 +74,21 @@ if($block->getCategories()){
     });
 
     function displayChildCategories(childCategories) {
-        var container = $('#childCategoriesContainer');
+
         container.empty();
 
         var content = '<div class="child-categories">';
         childCategories.forEach(function (category) {
-            content += '<div data-category-id="' + category.id + '">' + category.name + '</div>';
+            content += '<div data-category-url="' + category.url + '">' + category.name + '</div>';
         });
         content += '</div>';
 
-        container.append(content).toggle();
+        container.append(content).show();
 
         container.on('click', '.child-categories div', function () {
-            var childCategoryId = $(this).data('category-id');
+            var childCategoryurl = $(this).data('category-url');
             // Navigate to the child category page
-            window.location.href = '/catalog/category/view/id/' + childCategoryId;
+            window.location.href = childCategoryurl;
         });
     }
 
