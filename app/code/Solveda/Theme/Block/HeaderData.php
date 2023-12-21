@@ -25,4 +25,21 @@ class HeaderData extends Template
     {
         return $this->scopeConfig->getValue('solveda_custom/offer/selected_offer_categories');
     }
+
+    public function getCategoryUrl(){
+
+        $categoryId = $this->getOfferProductId();
+        $newUrlKey = 'offer';
+        if($categoryId){
+            $category = $this->categoryFactory->create()->load($categoryId);
+            $category->setUrlKey($newUrlKey);
+            $category->save();
+
+            return $category->getUrl();
+        }
+
+        return null;
+
+
+    }
 }

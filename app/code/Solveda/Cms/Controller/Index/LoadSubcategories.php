@@ -37,6 +37,7 @@ class LoadSubcategories extends Action
                     $childCategories[] = [
                         'id' => $childCategory->getId(),
                         'name' => $childCategory->getName(),
+                        'url' => $childCategory->getUrl(),
                     ];
                 }
             }
