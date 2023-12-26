@@ -11,8 +11,8 @@
             <resource>Solveda_Theme::config_solveda</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General Settings</label>
-                <field id="selected_categories" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Select Categories</label>
+                <field id="footer_categories" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Categories</label>
                     <source_model>Solveda\Theme\Model\Category</source_model>
                 </field>
                 <field id="email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
