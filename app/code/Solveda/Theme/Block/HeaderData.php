@@ -8,6 +8,7 @@ use Magento\Catalog\Model\CategoryFactory;
 
 class HeaderData extends Template
 {
+    const XML_PATH_OFFER_CATEGORIES = 'solveda_custom/offer/selected_offer_categories';
     protected $scopeConfig;
 
     public function __construct(
@@ -23,7 +24,7 @@ class HeaderData extends Template
 
     public function getOfferProductId()
     {
-        return $this->scopeConfig->getValue('solveda_custom/offer/selected_offer_categories');
+        return $this->scopeConfig->getValue(self::XML_PATH_OFFER_CATEGORIES);
     }
 
     public function getCategoryUrl(){

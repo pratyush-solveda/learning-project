@@ -27,6 +27,7 @@ class HomePage extends Template
     const XML_PATH_SIDE_CATEGORY = 'solveda_custom/sidebarcategories/select_categories';
 
     protected $scopeConfig;
+    protected $storeManager;
 
      /**
      * @var CategoryFactory

@@ -7,6 +7,10 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class ContactInfo extends Template
 {
+    const XML_PATH_CONFIG_EMAIL = 'solveda_custom/general/email';
+    const XML_PATH_CONFIG_ADDRESS = 'solveda_custom/general/address';
+    const XML_PATH_CONFIG_PHONE = 'solveda_custom/general/phoneno';
+
     protected $scopeConfig;
 
     public function __construct(
@@ -20,16 +24,34 @@ class ContactInfo extends Template
 
     public function getEmail()
     {
-        return $this->scopeConfig->getValue('solveda_custom/general/email');
+        $email =  $this->scopeConfig->getValue(self::XML_PATH_CONFIG_EMAIL);
+        if($email){
+            return $email;
+        }
+        else{
+            false;
+        }
     }
 
     public function getAddress()
     {
-        return $this->scopeConfig->getValue('solveda_custom/general/address');
+        $address = $this->scopeConfig->getValue(self::XML_PATH_CONFIG_ADDRESS);
+        if($address){
+            return $address;
+        }
+        else{
+            false;
+        }
     }
 
     public function getPhone()
     {
-        return $this->scopeConfig->getValue('solveda_custom/general/phoneno');
+        $phoneno = $this->scopeConfig->getValue(self::XML_PATH_CONFIG_PHONE);
+        if($phoneno){
+            return $phoneno;
+        }
+        else{
+            false;
+        }
     }
 }

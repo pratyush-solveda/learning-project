@@ -23,7 +23,7 @@
 
         <!-- Category container -->
         <referenceContainer name="footer.category.container">
-            <block class="Solveda\Theme\Block\CategoryFooter" name="custom.footer.category" template="Solveda_Theme::category/footercategory.phtml" />
+            <block class="Solveda\Theme\Block\FooterData" name="custom.footer.category" template="Solveda_Theme::category/footercategory.phtml" />
         </referenceContainer>
         
         <!-- Gift Cards container  -->
@@ -43,7 +43,7 @@
 
         <!-- summmary details container -->
         <referenceContainer name="footer.details.container">
-            <block class="Magento\Framework\View\Element\Template" name="summarydetails_info" template="Solveda_Theme::summary-info.phtml" />
+            <block class="Solveda\Theme\Block\FooterData" name="summarydetails_info" template="Solveda_Theme::summary-info.phtml" />
         </referenceContainer>
         <referenceBlock name="form.subscribe" remove="true" />
         <referenceContainer name="header.panel.wrapper" remove="true" />
